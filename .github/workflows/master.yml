@@ -17,10 +17,8 @@ jobs:
       run: |
         npm install
         npm run build
-    - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.1.0
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
       with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public
