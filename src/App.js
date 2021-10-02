@@ -1,25 +1,72 @@
-import logo from './logo.svg';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+  useHistory,
+  useLocation
+} from 'react-router-dom';
+import { Layout, Typography, Space } from 'antd';
 import './App.css';
+import PageSeason from 'pages/Season/Season';
+import PageSchedule from 'pages/Schedule/Schedule';
+import DetailCard from 'components/Detail/Card/Card';
+import QualifyingSearch from 'components/Qualifying/Search/Search';
+import ResultSearch from 'components/Result/Search/Search';
+import ConstructorStandingSearch from 'components/Constructor/Standing/Search/Search';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+const { Header, Footer, Content } = Layout;
+const { Title, Text } = Typography;
+
+const routes = [
+  {
+    path: '/',
+    component: PageSeason,
+  },
+  {
+    path: '/schedule/:season',
+    component: PageSchedule,
+  },
+  {
+    path: '/details',
+    component: DetailCard
+  },
+];
+
+const App = () => {
+  return(
+    <>
+      <Router>
+        <Layout>
+          <Header>
+            <Space>
+              <Title type='success' level={1}>F1</Title>
+              <Text type='success'>Racing</Text>
+            </Space>
+          </Header>
+          <Content>
+            <div className='layout-content'>
+              <Switch>
+                {routes.map((route, index) => (
+                  <Route
+                    key={index}
+                    exact
+                    path={route.path}
+                    component={route.component}
+                  />
+                ))}              
+              </Switch>
+            </div>
+          </Content>
+          <Footer style={{ textAlign: 'center', backgroundColor: '#000' }}>
+            <Text type='success'>Font: Ergast Developer API</Text>
+          </Footer>
+        </Layout>
+        </Router>
+    </>
   );
-}
+};
 
 export default App;
