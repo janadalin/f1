@@ -18,8 +18,8 @@ jobs:
         npm install
         npm run build
     
-    - name: Deploy to gh-pages
-      uses: peaceiris/actions-gh-pages@v3
+    - name: 🚀 GitHub Pages v3
+      uses: peaceiris/actions-github-pages@v3.1.12
       with:
         github_token: ${{secrets.GITHUB_TOKEN }}
         publish_dir: ./build
