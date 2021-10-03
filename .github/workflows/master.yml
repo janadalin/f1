@@ -15,10 +15,8 @@ jobs:
       
     - name: 🔨 Build Project
       run: |
-        npm install --cache /tmp/empty-cach
-        rm -rf node_modules
         npm ci
-        npm run build
+        CI=false npm run build
     
     - name: 🚀 GitHub Pages v3
       uses: peaceiris/actions-github-pages@v3.1.12
