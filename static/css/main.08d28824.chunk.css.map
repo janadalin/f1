@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/App.css"],"names":[],"mappings":"AAAA,gBACE,8BAA+B,CAC/B,WAAY,CACZ,YAAa,CACb,eAAgB,CAChB,oBACF","file":"main.08d28824.chunk.css","sourcesContent":[".layout-content{\n  min-height: calc(100vh - 9.6em);\n  height: 100%;\n  padding: 24px;\n  background: #fff;\n  background-size: auto;\n}"]}
