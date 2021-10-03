@@ -15,7 +15,7 @@ jobs:
       
     - name: 🔨 Build Project
       run: |
-        npm cache clean
+        npm install --cache /tmp/empty-cach
         rm -rf node_modules
         npm ci
         npm run build
