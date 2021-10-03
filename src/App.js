@@ -38,7 +38,7 @@ const routes = [
 const App = () => {
   return(
     <>
-      <Router>
+      <Router basename=`/${process.env.PUBLIC_URL}`>
         <Layout>
           <Header>
             <Space>
@@ -48,7 +48,6 @@ const App = () => {
           </Header>
           <Content>
             <div className='layout-content'>
-              <BrowserRouter basename={process.env.PUBLIC_URL}>
               <Switch>
                 {routes.map((route, index) => (
                   <Route
@@ -59,7 +58,6 @@ const App = () => {
                   />
                 ))}              
               </Switch>
-              </BrowserRouter>
             </div>
           </Content>
           <Footer style={{ textAlign: 'center', backgroundColor: '#000' }}>
