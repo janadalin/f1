@@ -1,23 +1,25 @@
-name: deploy
-
-on: 
- push: 
-  branches: 
-   - master
-
+on: push
+name: 🚀 Deploy website on push
 jobs:
- deploy: runs-on: ubuntu-latest
-  steps:
-   - uses: actions/checkout@v2
-   - uses: actions/setup-node@v1
-    with:
-     node-version: '14.x'
-   - name: Build web-app
-    run: |
-     npm install
-     npm run build
-   - name: Deploy to gh-pages
-    uses: peaceiris/actions-gh-pages@v3
-    with:
-     github_token: ${{secrets.GITHUB_TOKEN }}
-     publish_dir: ./build
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
+
+    - name: Use Node.js 12
+      uses: actions/setup-node@v2-beta
+      with:
+        node-version: '12'
+      
+    - name: 🔨 Build Project
+      run: |
+        npm install
+        npm run build
+    
+    - name: Deploy to gh-pages
+     uses: peaceiris/actions-gh-pages@v3
+      with:
+       github_token: ${{secrets.GITHUB_TOKEN }}
+       publish_dir: ./build
