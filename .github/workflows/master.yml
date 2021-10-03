@@ -16,7 +16,7 @@ jobs:
     - name: 🔨 Build Project
       run: |
         npm ci
-        CI=false npm run build
+        CI= npm run build
     
     - name: 🚀 GitHub Pages v3
       uses: peaceiris/actions-github-pages@v3.1.12
