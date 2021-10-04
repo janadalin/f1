@@ -60,7 +60,7 @@ const QualifyingTable = ({ loading, error, qualifyings }) => {
 
     return(
         <Table
-            scroll={{ y: 200 }}
+            scroll={{ x: 1500, y: 200 }}
             columns={columns}
             dataSource={qualifyings.MRData.RaceTable.Races[0].QualifyingResults}
             rowKey='position'
