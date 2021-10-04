@@ -73,7 +73,7 @@ const ResultTable = ({ loading, error, results }) => {
 
     return(
         <Table
-            scroll={{ y: 200 }}
+            scroll={{ x: 1500, y: 200 }}
             columns={columns}
             dataSource={results.MRData.RaceTable.Races[0].Results}
             rowKey='position'
