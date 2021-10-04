@@ -50,7 +50,7 @@ const ConstructorStandingTable = ({ loading, error, standings }) => {
     
     return(
         <Table
-            scroll={{ y: 200 }}
+            scroll={{ x: 1500, y: 200 }}
             columns={columns}
             dataSource={standings.MRData.StandingsTable.StandingsLists[0].ConstructorStandings}
             rowKey='position'
